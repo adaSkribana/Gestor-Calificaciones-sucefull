@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Editar Nota{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    Editar Nota
+                </div>
+                <div class="card-body">
+                    <h2>Editar Nota</h2>
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="{{ form.submit.class }}">Guardar Cambios</button>
+                    </form>
+                    <a href="{% url 'lista_notas' %}" class="btn">Volver a la Lista</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

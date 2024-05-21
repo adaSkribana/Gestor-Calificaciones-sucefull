@@ -1,0 +1,40 @@
+{% load static %}
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-transparent" id="my_bar">
+    <a class="navbar-brand" href="{% url 'home' %}">
+      <img src="{% static 'img/icono.png' %}" alt="Icono" width="30" height="30">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link navbar-item btn" href="{% url 'home' %}">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link navbar-item btn" href="{% url 'lista_alumnos' %}">Alumnos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link navbar-item btn" href="{% url 'lista_asignaturas' %}">Asignaturas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link navbar-item btn" href="{% url 'lista_notas' %}">Calificaciones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link navbar-item btn" href="{% url 'autenticacion:logout' %}">Cerrar Sesión</a>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link navbar-item btn" href="{% url 'autenticacion:signup' %}">Registrarse</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link navbar-item btn" href="{% url 'autenticacion:login' %}">Iniciar Sesión</a>
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+
+

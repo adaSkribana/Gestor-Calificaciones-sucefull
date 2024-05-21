@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Detalle de la Asignatura{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    Detalle de la Asignatura
+                </div>
+                <div class="card-body">
+                    <h2>{{ asignatura.nombre }}</h2>
+                    <p>Descripción: {{ asignatura.descripcion }}</p>
+                    <a href="{% url 'editar_asignatura' asignatura.pk %}" class="btn ">Editar Asignatura</a>
+                    <a href="{% url 'lista_asignaturas' %}" class="btn ">Volver a la Lista</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h2>Administración</h2>
+                </div>
+                <div class="card-body">
+                    <div class="list-group">
+                        <a href="{% url 'lista_alumnos' %}" class="list-group-item list-group-item-action">
+                            <h5 class="mb-1">Gestionar Alumnos</h5>
+                            <p class="mb-1">Administrar la lista de alumnos, editar o añadir nuevos.</p>
+                        </a>
+                        <a href="{% url 'lista_asignaturas' %}" class="list-group-item list-group-item-action">
+                            <h5 class="mb-1">Gestionar Asignaturas</h5>
+                            <p class="mb-1">Ver y editar la lista de asignaturas disponibles.</p>
+                        </a>
+                        <a href="{% url 'lista_notas' %}" class="list-group-item list-group-item-action">
+                            <h5 class="mb-1">Gestionar Notas</h5>
+                            <p class="mb-1">Gestionar las notas de los alumnos.</p>
+                        </a>
+                        <a href="{% url 'autenticacion:profile' %}" class="list-group-item list-group-item-action">
+                            <h5 class="mb-1">Perfil</h5>
+                            <p class="mb-1">Editar la información del perfil del usuario.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de calificaciones{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h2>Lista de calificaciones</h2>
+                    <a class=" btn" href="{% url 'home' %}">Volver al inicio</a>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Alumno</th>
+                                <th>Asignatura</th>
+                                <th>Descripción</th>
+                                <th>Puntaje</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for nota in notas %}
+                                <tr>
+                                    <td>{{ nota.alumno }}</td>
+                                    <td>{{ nota.asignatura.nombre }}</td>
+                                    <td>{{ nota.asignatura.descripcion }}</td>
+                                    <td>{{ nota.puntaje }}</td>
+                                    <td>
+                                        <a href="{% url 'editar_nota' nota.id %}" class="btn btn-sm">Editar</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer">
+                    <a href="{% url 'nueva_nota' %}" class="btn ">Nueva Calificacion</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
