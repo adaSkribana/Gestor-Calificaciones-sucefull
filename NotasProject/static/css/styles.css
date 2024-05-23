@@ -1,0 +1,43 @@
+  .container {
+        margin-top: 50px;
+
+    }
+ 
+ /* Body */
+    body {
+        background-color: #f6b8c5;
+        font-family: "Times New Roman", Times, serif; /* Cambia la fuente según tus preferencias */
+        font-style: italic; /* Estilo cursivo para el texto del cuerpo */
+        margin: 0; /* Elimina el margen por defecto */
+        padding-bottom: 60px; /* Espacio para el footer */
+        min-height: 100vh; /* Altura mínima de la ventana */
+        display: flex;
+        flex-direction: column;
+      }
+  
+      /* Navbar */
+      #my_bar {
+        background-color: #fff !important;
+        border: 1px solid #808080; /* Borde para el navbar */
+        font-family: "Times New Roman", Times, serif; /* Cambia la fuente según tus preferencias */
+        font-style: italic; /* Estilo cursivo para el texto del cuerpo */
+      }
+  
+      /* Main content */
+      main {
+        flex: 1; /* Toma el espacio disponible en la página */
+      }
+  
+      /* Footer */
+      .my_pie {
+        text-align: center; /* Alineación del texto al centro */
+        padding: 10px 0; /* Espaciado dentro del footer */
+        width: 100%; /* Ancho completo */
+      }
+  
+      /* Efecto de zoom al pasar el mouse sobre el footer */
+      #my_pie:hover {
+        transform: scale(1.1); /* Escala el footer al 110% al pasar el mouse sobre él */
+        border: 2px solid #a17171; /* Borde plateado oscuro */
+        transition: transform 0.3s ease, border-color 0.3s ease; /* Animación suave */
+      }
